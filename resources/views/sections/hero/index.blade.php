@@ -34,9 +34,10 @@
         box-shadow: none; /* Menghapus bayangan jika ada */
         padding: 20px; /* Menambah sedikit jarak agar tidak terlalu rapat */
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Menambah bayangan teks agar mudah dibaca */
+        border: none !important; /* <-- TAMBAHKAN BARIS INI UNTUK MENGHILANGKAN GARIS ORANYE */
     }
 
-    /* Menghilangkan garis dekoratif di atas judul */
+    /* Menghilangkan garis dekoratif di atas judul (jika ada) */
     #hero .container h2::before {
         display: none !important;
     }
