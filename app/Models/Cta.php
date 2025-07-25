@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Cta extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'headline', 'paragraph', 'button_text', 'button_url', 'background_image'
+    ];
+}
