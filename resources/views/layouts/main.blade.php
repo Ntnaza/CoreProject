@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('title')Core Project</title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Favicons -->
   <link href="{{ asset('assets/img/favicon.png')}}" rel="icon">
   <link href="{{ asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
@@ -35,13 +36,16 @@
     @include('sections.call.index')
     @include('sections.portfolio.index')
     @include('sections.team.index')
+    @include('sections.testimonial.index') 
     @include('sections.contact.index') 
     
     
   </main>
-
+  
   {{-- Footer --}}
   @include('partials.footer')
+  {{-- <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> --}}
+  {{-- <div id="preloader"></div> --}}
 
     <!-- Vendor JS Files -->
   <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

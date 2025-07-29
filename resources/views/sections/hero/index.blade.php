@@ -7,7 +7,7 @@
             <div class="container">
                 <h2>{{ $item->title }}</h2>
                 <p>{{ $item->description }}</p>
-                <a href="#featured-services" class="btn-get-started">Get Started</a>
+                <a href="#services" class="btn-get-started">Get Started</a>
             </div>
         </div>
         @endforeach

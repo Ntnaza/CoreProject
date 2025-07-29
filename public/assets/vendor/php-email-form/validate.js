@@ -49,40 +49,35 @@
     });
   });
 
-  function php_email_form_submit(thisForm, action, formData) {
+function php_email_form_submit(thisForm, action, formData) {
   fetch(action, {
     method: 'POST',
     body: formData,
     headers: {
       'X-Requested-With': 'XMLHttpRequest',
-      // TAMBAHKAN BARIS DI BAWAH INI
       'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
     }
   })
   .then(response => {
-    if (response.ok) {
-      return response.text();
-    } else {
-      throw new Error(`${response.status} ${response.statusText} ${response.url}`);
+    // Jika respon tidak OK (misal: error validasi 422)
+    if (!response.ok) {
+      // Kita ambil teks errornya untuk ditampilkan
+      return response.text().then(text => { throw new Error(text) });
     }
+    return response.text();
   })
   .then(data => {
     thisForm.querySelector('.loading').classList.remove('d-block');
-    // Kita ubah sedikit logika di sini agar lebih fleksibel
-    if (data.trim().toLowerCase() === 'ok') {
+    if (data.trim() == 'OK') {
       thisForm.querySelector('.sent-message').classList.add('d-block');
       thisForm.reset();
     } else {
-      // Jika ingin menampilkan pesan dari controller, gunakan baris di bawah
-      // throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
-      
-      // Untuk sekarang, kita gunakan pesan default
-       thisForm.querySelector('.sent-message').classList.add('d-block');
-       thisForm.reset();
+      throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action);
     }
   })
   .catch((error) => {
-    displayError(thisForm, error);
+    // Tampilkan pesan error yang bersih di kotak merah
+    displayError(thisForm, error.message);
   });
 }
   function displayError(thisForm, error) {

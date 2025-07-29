@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\HeroItem;
-use App\Models\About; // <-- 1. Tambahkan ini untuk mengimpor model About
+use App\Models\About;
 use App\Models\FeatureSection;
 use App\Models\FeatureItem;
 use App\Models\ServiceSection;
@@ -15,7 +15,9 @@ use App\Models\PortfolioCategory;
 use App\Models\PortfolioItem;
 use App\Models\TeamSection;
 use App\Models\TeamMember;
-use App\Models\ContactInfo; 
+use App\Models\ContactInfo;
+use App\Models\Testimonial;
+use App\Models\TestimonialSection;
 class HomeController extends Controller
 {
     /**
@@ -23,25 +25,27 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // 2. Ambil semua data yang dibutuhkan oleh halaman utama
         $heroItems = HeroItem::latest()->get();
         $about = About::firstOrFail();
         $featureSection = FeatureSection::firstOrFail();
         $featureItems = FeatureItem::all();
         $serviceSection = ServiceSection::firstOrFail();
-        $services = Service::all();
+        $services = Service::all(); // Cukup panggil sekali
         $cta = Cta::firstOrFail();
         $portfolioCategories = PortfolioCategory::all();
         $portfolioItems = PortfolioItem::with('category')->get();
         $teamSection = TeamSection::firstOrFail();
         $teamMembers = TeamMember::all();
-       $contactInfo = ContactInfo::firstOrFail();
-$services = Service::all();
-    
-    // Kirim semua data ke view
-    return view('layouts.main', compact('heroItems', 'about', 'featureSection', 'featureItems', 'serviceSection', 'services', 'cta', 'portfolioCategories', 'portfolioItems', 'teamSection', 'teamMembers','contactInfo', 'services'));
-    }
+        $contactInfo = ContactInfo::firstOrFail();
+        $testimonials = Testimonial::where('is_approved', true)->latest()->get();
+         $testimonialSection = TestimonialSection::firstOrFail();
 
-    // 4. Metode aboutSectionData() sudah tidak diperlukan lagi
-    // karena logikanya sudah kita pindahkan ke dalam metode index()
+        // Kirim semua data ke view
+        return view('layouts.main', compact(
+            'heroItems', 'about', 'featureSection', 'featureItems', 'serviceSection',
+            'services', // Cukup panggil sekali
+            'cta', 'portfolioCategories', 'portfolioItems', 'teamSection',
+            'teamMembers','contactInfo', 'testimonialSection', 'testimonials'
+        ));
+    }
 }

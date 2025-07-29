@@ -386,6 +386,11 @@ return [
     'route'  => 'settings.edit',
     'icon' => 'fas fa-fw fa-cog',
 ],
+[
+    'text' => 'Testimoni',
+    'route'  => 'testimonials.index',
+    'icon' => 'fas fa-fw fa-comments',
+],
     // Anda bisa menambahkan menu CRUD lainnya di sini
     // [
     //     'text' => 'Manajemen User',
