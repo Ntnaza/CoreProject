@@ -1,20 +1,20 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\Setting;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class SettingSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
-{
-    Setting::create([
-        'site_name' => 'Alstar',
-        'logo' => null, // Awalnya kosong
-    ]);
-}
+    {
+        DB::table('settings')->insert([
+            'id' => 1,
+            'site_name' => 'Core Project',
+            'logo' => 'settings/8bWotVbZdq5Wm8IoocMe4jOhdzhJFRtNvqxsRpQL.png',
+            'created_at' => '2025-07-24 00:37:00',
+            'updated_at' => '2025-07-24 02:26:04',
+        ]);
+    }
 }

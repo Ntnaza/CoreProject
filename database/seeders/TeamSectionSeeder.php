@@ -1,20 +1,20 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\TeamSection;
+
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\DB;
 
 class TeamSectionSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
-{
-    TeamSection::create([
-        'title' => 'Team',
-        'subtitle' => 'Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit',
-    ]);
-}
+    {
+        DB::table('team_sections')->insert([
+            'id' => 1,
+            'title' => 'Team',
+            'subtitle' => 'Anggota hebat dan Profesional',
+            'created_at' => '2025-07-22 22:23:21',
+            'updated_at' => '2025-07-24 10:23:49',
+        ]);
+    }
 }

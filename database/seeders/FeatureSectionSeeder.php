@@ -1,22 +1,22 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\FeatureSection;
+
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\DB;
 
 class FeatureSectionSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
-{
-    FeatureSection::create([
-        'headline' => 'Why Choose Our Products?',
-        'paragraph' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.',
-        'link_text' => 'Learn More',
-        'link_url' => '#',
-    ]);
-}
+    {
+        DB::table('feature_sections')->insert([
+            'id' => 1,
+            'headline' => 'Mengapa Memilih Produk Kami?',
+            'paragraph' => 'Core Project hadir sebagai solusi terpercaya untuk kebutuhan Anda dalam bidang konstruksi dan pengembangan teknologi. Kami memahami bahwa setiap proyek adalah investasi berharga, oleh karena itu kami menawarkan produk dan layanan yang tidak hanya berkualitas tinggi, tetapi juga didukung oleh tim profesional.',
+            'link_text' => 'Learn More',
+            'link_url' => '#',
+            'created_at' => '2025-07-21 00:53:24',
+            'updated_at' => '2025-07-24 09:45:00',
+        ]);
+    }
 }

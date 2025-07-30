@@ -1,17 +1,20 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\ServiceSection;
+
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\DB;
 
 class ServiceSectionSeeder extends Seeder
 {
-   public function run(): void
-{
-    ServiceSection::create([
-        'title' => 'Services',
-        'subtitle' => 'Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit',
-    ]);
-}
+    public function run(): void
+    {
+        DB::table('service_sections')->insert([
+            'id' => 1,
+            'title' => 'Layanan',
+            'subtitle' => 'Solusi Terbaik untuk Kebutuhan Anda',
+            'created_at' => '2025-07-21 17:45:49',
+            'updated_at' => '2025-07-24 09:54:46',
+        ]);
+    }
 }

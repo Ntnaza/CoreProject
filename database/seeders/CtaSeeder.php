@@ -2,20 +2,22 @@
 
 namespace Database\Seeders;
 
-use App\Models\Cta;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\DB;
 
 class CtaSeeder extends Seeder
 {
     public function run(): void
     {
-        Cta::create([
+        DB::table('ctas')->insert([
+            'id' => 1,
             'headline' => 'Call To Action',
-            'paragraph' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            'button_text' => 'Call To Action',
-            'button_url' => '#',
-            'background_image' => 'placeholder.jpg', // Nama file placeholder
+            'paragraph' => 'Lihat hasil kerja terbaik kami dan temukan inspirasi untuk proyek Anda berikutnya.',
+            'button_text' => 'Produk Kami',
+            'button_url' => '#portfolio',
+            'background_image' => 'cta/WM5m08opnUbWlt0FrOcdNndr8cidaZkhcjWLUvGp.jpg',
+            'created_at' => '2025-07-21 20:06:11',
+            'updated_at' => '2025-07-24 18:47:48',
         ]);
     }
 }
