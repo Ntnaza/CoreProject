@@ -8,7 +8,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Favicons -->
-  <link href="{{ asset('assets/img/favicon.png')}}" rel="icon">
+  <link href="{{ asset('assets/img/core.png')}}" rel="icon">
   <link href="{{ asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
 
