@@ -16,7 +16,7 @@ class TeamMemberController extends Controller
      */
     public function index()
     {
-        return redirect()->route('team.index');
+        return redirect()->route('admin.team.index');
     }
 
     /**
@@ -49,7 +49,7 @@ class TeamMemberController extends Controller
 
         TeamMember::create($validated);
 
-        return redirect()->route('team.index')->with('success', 'Anggota tim baru berhasil ditambahkan!');
+        return redirect()->route('admin.team.index')->with('success', 'Anggota tim baru berhasil ditambahkan!');
     }
 
     /**
@@ -86,7 +86,7 @@ class TeamMemberController extends Controller
 
         $teamMember->update($validated);
 
-        return redirect()->route('team.index')->with('success', 'Anggota tim berhasil diperbarui!');
+        return redirect()->route('admin.team.index')->with('success', 'Anggota tim berhasil diperbarui!');
     }
 
     /**
@@ -99,6 +99,6 @@ class TeamMemberController extends Controller
         // Hapus data dari database
         $teamMember->delete();
 
-        return redirect()->route('team.index')->with('success', 'Anggota tim berhasil dihapus!');
+        return redirect()->route('admin.team.index')->with('success', 'Anggota tim berhasil dihapus!');
     }
 }

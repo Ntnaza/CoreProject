@@ -9,7 +9,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('hero-items.create') }}" class="btn btn-primary">Tambah Item Baru</a>
+            <a href="{{ route('admin.hero-items.create') }}" class="btn btn-primary">Tambah Item Baru</a>
         </div>
         <div class="card-body">
             @if(session('success'))
@@ -31,8 +31,8 @@
                         <td><img src="{{ Storage::url($item->image) }}" alt="Image" width="150"></td>
                         <td>{{ $item->title }}</td>
                         <td>
-                            <a href="{{ route('hero-items.edit', $item) }}" class="btn btn-sm btn-warning">Edit</a>
-                            <form action="{{ route('hero-items.destroy', $item) }}" method="POST" style="display:inline-block;">
+                            <a href="{{ route('admin.hero-items.edit', $item) }}" class="btn btn-sm btn-warning">Edit</a>
+                            <form action="{{ route('admin.hero-items.destroy', $item) }}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Anda yakin?')">Hapus</button>

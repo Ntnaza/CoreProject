@@ -14,7 +14,7 @@
         @endif
 
         {{-- Perbaikan ada di baris ini --}}
-        <form action="{{ route('cta.update') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.cta.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 

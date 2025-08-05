@@ -7,7 +7,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <a href="{{ route('portfolio-items.create') }}" class="btn btn-primary">Tambah Item Baru</a>
+        <a href="{{ route('admin.portfolio-items.create') }}" class="btn btn-primary">Tambah Item Baru</a>
     </div>
     <div class="card-body">
         @if(session('success'))
@@ -31,8 +31,8 @@
                     <td>{{ $item->title }}</td>
                     <td>{{ $item->category->name ?? 'N/A' }}</td>
                     <td>
-                        <a href="{{ route('portfolio-items.edit', $item) }}" class="btn btn-sm btn-warning">Edit</a>
-                        <form action="{{ route('portfolio-items.destroy', $item) }}" method="POST" style="display:inline-block;">
+                        <a href="{{ route('admin.portfolio-items.edit', $item) }}" class="btn btn-sm btn-warning">Edit</a>
+                        <form action="{{ route('admin.portfolio-items.destroy', $item) }}" method="POST" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Anda yakin?')">Hapus</button>

@@ -83,7 +83,7 @@ class PortfolioItemController extends Controller
 
         $portfolioItem->update($validated);
 
-        return redirect()->route('portfolio-items.index')->with('success', 'Item portfolio berhasil diperbarui!');
+        return redirect()->route('admin.portfolio-items.index')->with('success', 'Item portfolio berhasil diperbarui!');
     }
 
     /**
@@ -96,6 +96,6 @@ class PortfolioItemController extends Controller
         // Hapus data dari database
         $portfolioItem->delete();
 
-        return redirect()->route('portfolio-items.index')->with('success', 'Item portfolio berhasil dihapus!');
+        return redirect()->route('admin.portfolio-items.index')->with('success', 'Item portfolio berhasil dihapus!');
     }
 }

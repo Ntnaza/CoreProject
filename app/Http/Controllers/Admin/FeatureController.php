@@ -28,6 +28,6 @@ class FeatureController extends Controller
 
         $featureSection->update($validated);
 
-        return redirect()->route('features.index')->with('success', 'Bagian "Why Box" berhasil diperbarui!');
+        return redirect()->route('admin.features.index')->with('success', 'Bagian "Why Box" berhasil diperbarui!');
     }
 }

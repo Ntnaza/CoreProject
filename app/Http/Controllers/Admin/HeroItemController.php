@@ -37,7 +37,7 @@ class HeroItemController extends Controller
             'image' => $imagePath,
         ]);
 
-        return redirect()->route('hero-items.index')->with('success', 'Item berhasil ditambahkan!');
+        return redirect()->route('admin.hero-items.index')->with('success', 'Item berhasil ditambahkan!');
     }
 
     public function edit(HeroItem $heroItem)
@@ -63,7 +63,7 @@ class HeroItemController extends Controller
 
         $heroItem->update($validated);
 
-        return redirect()->route('hero-items.index')->with('success', 'Item berhasil diperbarui!');
+        return redirect()->route('admin.hero-items.index')->with('success', 'Item berhasil diperbarui!');
     }
 
     public function destroy(HeroItem $heroItem)
@@ -73,6 +73,6 @@ class HeroItemController extends Controller
         // Hapus data dari database
         $heroItem->delete();
 
-        return redirect()->route('hero-items.index')->with('success', 'Item berhasil dihapus!');
+        return redirect()->route('admin.hero-items.index')->with('success', 'Item berhasil dihapus!');
     }
 }

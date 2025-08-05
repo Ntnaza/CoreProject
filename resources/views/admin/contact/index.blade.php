@@ -22,7 +22,7 @@
             <h3 class="card-title">Edit Informasi Kontak</h3>
         </div>
         <div class="card-body">
-            <form action="{{ route('contact.info.update') }}" method="POST">
+            <form action="{{ route('admin.contact.info.update') }}" method="POST">
                 @csrf
                 @method('PUT')
 
@@ -112,7 +112,7 @@
                         <td>{{ $message->subject }}</td>
                         <td>{{ $message->message }}</td>
                         <td>
-                            <form action="{{ route('contact.message.destroy', $message) }}" method="POST">
+                            <form action="{{ route('admin.contact.message.destroy', $message) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-xs btn-danger" onclick="return confirm('Anda yakin ingin menghapus pesan ini?')">Hapus</button>

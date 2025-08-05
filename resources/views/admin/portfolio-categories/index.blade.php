@@ -7,7 +7,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <a href="{{ route('portfolio-categories.create') }}" class="btn btn-primary">Tambah Kategori Baru</a>
+        <a href="{{ route('admin.portfolio-categories.create') }}" class="btn btn-primary">Tambah Kategori Baru</a>
     </div>
     <div class="card-body">
         @if(session('success'))
@@ -29,8 +29,8 @@
                     <td>{{ $category->name }}</td>
                     <td><code>{{ $category->filter }}</code></td>
                     <td>
-                        <a href="{{ route('portfolio-categories.edit', $category) }}" class="btn btn-sm btn-warning">Edit</a>
-                        <form action="{{ route('portfolio-categories.destroy', $category) }}" method="POST" style="display:inline-block;">
+                        <a href="{{ route('admin.portfolio-categories.edit', $category) }}" class="btn btn-sm btn-warning">Edit</a>
+                        <form action="{{ route('admin.portfolio-categories.destroy', $category) }}" method="POST" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Anda yakin ingin menghapus kategori ini? Menghapus kategori akan menghapus semua item portfolio di dalamnya.')">Hapus</button>

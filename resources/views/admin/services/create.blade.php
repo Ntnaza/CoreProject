@@ -6,7 +6,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('service-items.store') }}" method="POST">
+        <form action="{{ route('admin.service-items.store') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label>Kelas Ikon</label>

@@ -7,7 +7,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('portfolio-categories.store') }}" method="POST">
+        <form action="{{ route('admin.portfolio-categories.store') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="name">Nama Kategori</label>
@@ -21,7 +21,7 @@
                 <small class="form-text text-muted">Gunakan format "filter-namakategori" tanpa spasi.</small>
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="{{ route('portfolio-categories.index') }}" class="btn btn-secondary">Batal</a>
+            <a href="{{ route('admin.portfolio-categories.index') }}" class="btn btn-secondary">Batal</a>
         </form>
     </div>
 </div>

@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Core</b> Project',
+    'logo_img' => 'vendor/adminlte/dist/img/Core.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -323,7 +323,7 @@ return [
         'text' => 'search',
     ],
     [
-        'text'        => 'Dasbor',
+        'text'        => 'Dashboard',
         'route'       => 'admin.dashboard', // Menggunakan named route
         'icon'        => 'fas fa-fw fa-tachometer-alt',
     ],
@@ -331,64 +331,64 @@ return [
     // Header untuk mengelompokkan menu
     ['header' => 'MANAJEMEN KONTEN'],
     [
-        'text' => 'Hero Carousel',
-        'route'  => 'hero-items.index', // Menggunakan named route dari resource
+        'text' => 'Beranda',
+        'route'  => 'admin.hero-items.index', // Menggunakan named route dari resource
         'icon' => 'far fa-fw fa-images',
     ],
     // config/adminlte.php -> 'menu'
     [
-        'text' => 'Halaman About Us',
-        'route'  => 'about.edit',
+        'text' => 'Tentang Kami',
+        'route'  => 'admin.about.edit',
         'icon' => 'far fa-fw fa-address-card',
     ],
     [
         'text' => 'Features',
-        'route'  => 'features.index', // <-- MENU BARU DITAMBAHKAN
+        'route'  => 'admin.features.index', // <-- MENU BARU DITAMBAHKAN
         'icon' => 'fas fa-fw fa-list-ul',
     ],
 [
-    'text' => 'Services',
-    'route'  => 'services.index',
+    'text' => 'Layanan',
+    'route'  => 'admin.services.index',
     'icon' => 'fas fa-fw fa-concierge-bell',
 ],
 [
     'text' => 'Call To Action',
-    'route'  => 'cta.edit',
+    'route'  => 'admin.cta.edit',
     'icon' => 'fas fa-fw fa-bullhorn',
 ],
 [
-    'text' => 'Portfolio',
+    'text' => 'Produk Kami',
     'icon' => 'fas fa-fw fa-th',
     'submenu' => [
         [
-            'text' => 'Kategori Portfolio',
-            'route'  => 'portfolio-categories.index',
+            'text' => 'Kategori Produk',
+            'route'  => 'admin.portfolio-categories.index',
         ],
         [
-            'text' => 'Item Portfolio',
-            'route'  => 'portfolio-items.index',
+            'text' => 'Item Produk',
+            'route'  => 'admin.portfolio-items.index',
         ],
     ],
 ],
 [
-    'text' => 'Tim',
-    'route'  => 'team.index',
+    'text' => 'Team',
+    'route'  => 'admin.team.index',
     'icon' => 'fas fa-fw fa-users',
 ],
 [
     'text' => 'Kontak',
-    'route'  => 'contact.index',
+    'route'  => 'admin.contact.index',
     'icon' => 'fas fa-fw fa-phone-alt',
 ],
 ['header' => 'PENGATURAN SITUS'],
 [
     'text' => 'Pengaturan Umum',
-    'route'  => 'settings.edit',
+    'route'  => 'admin.settings.edit',
     'icon' => 'fas fa-fw fa-cog',
 ],
 [
     'text' => 'Testimoni',
-    'route'  => 'testimonials.index',
+    'route'  => 'admin.testimonials.index',
     'icon' => 'fas fa-fw fa-comments',
 ],
     // Anda bisa menambahkan menu CRUD lainnya di sini
@@ -399,12 +399,12 @@ return [
     // ],
 
 
-    ['header' => 'PENGATURAN AKUN'],
-    [
-        'text' => 'Profil',
-        'url'  => '#', // Ganti dengan rute profil Anda
-        'icon' => 'fas fa-fw fa-user',
-    ],
+    // ['header' => 'PENGATURAN AKUN'],
+    // [
+    //     'text' => 'Profil',
+    //     'url'  => '#', // Ganti dengan rute profil Anda
+    //     'icon' => 'fas fa-fw fa-user',
+    // ],
 ],
 
     /*

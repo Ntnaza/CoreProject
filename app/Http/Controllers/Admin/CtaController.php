@@ -42,6 +42,6 @@ public function update(Request $request)
 
     $cta->update($validated);
 
-    return redirect()->route('cta.edit')->with('success', 'Bagian Call to Action berhasil diperbarui!');
+    return redirect()->route('admin.cta.edit')->with('success', 'Bagian Call to Action berhasil diperbarui!');
 }
 }

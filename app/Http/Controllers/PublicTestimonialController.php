@@ -20,7 +20,7 @@ class PublicTestimonialController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'position' => 'required|string|max:255',
-            'quote' => 'required|string',
+            'quote' => 'required|string|max:50',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg|max:1024',
             'stars' => 'required|integer|min:1|max:5',
         ]);

@@ -39,7 +39,7 @@ class TeamMemberSeeder extends Seeder
             [
                 'id' => 3,
                 'name' => 'M Nizar Rahmatulloh',
-                'position' => 'Fullstak Developer',
+                'position' => 'Fullstack Developer',
                 'photo' => 'team/VcxwpKxOGzRjOXXtV7Ew4rCCufWRZ8b5T4reRFI3.jpg',
                 'description' => 'AI adalah solusi',
                 'twitter_url' => null,
@@ -65,7 +65,7 @@ class TeamMemberSeeder extends Seeder
             [
                 'id' => 5,
                 'name' => 'Jindan',
-                'position' => 'Fulstak Devloper',
+                'position' => 'Fullstack Developer',
                 'photo' => 'team/pvjw1iRI0aT9x8JT7I6n4cEMTUAp8zlumH5ZTkZI.jpg',
                 'description' => 'Woah woah we wan I LIKE Very NICE',
                 'twitter_url' => null,

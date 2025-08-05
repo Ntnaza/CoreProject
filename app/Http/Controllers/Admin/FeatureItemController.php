@@ -29,7 +29,7 @@ class FeatureItemController extends Controller
 
         FeatureItem::create($validated);
 
-        return redirect()->route('features.index')->with('success', 'Icon Box baru berhasil ditambahkan!');
+        return redirect()->route('admin.features.index')->with('success', 'Icon Box baru berhasil ditambahkan!');
     }
 
     /**
@@ -53,7 +53,7 @@ class FeatureItemController extends Controller
 
         $featureItem->update($validated);
 
-        return redirect()->route('features.index')->with('success', 'Icon Box berhasil diperbarui!');
+        return redirect()->route('admin.features.index')->with('success', 'Icon Box berhasil diperbarui!');
     }
 
     /**
@@ -63,6 +63,6 @@ class FeatureItemController extends Controller
     {
         $featureItem->delete();
 
-        return redirect()->route('features.index')->with('success', 'Icon Box berhasil dihapus!');
+        return redirect()->route('admin.features.index')->with('success', 'Icon Box berhasil dihapus!');
     }
 }

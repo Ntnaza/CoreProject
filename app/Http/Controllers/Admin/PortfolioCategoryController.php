@@ -37,7 +37,7 @@ class PortfolioCategoryController extends Controller
 
         PortfolioCategory::create($validated);
 
-        return redirect()->route('portfolio-categories.index')->with('success', 'Kategori baru berhasil ditambahkan!');
+        return redirect()->route('admin.portfolio-categories.index')->with('success', 'Kategori baru berhasil ditambahkan!');
     }
 
     /**
@@ -60,7 +60,7 @@ class PortfolioCategoryController extends Controller
 
         $portfolioCategory->update($validated);
 
-        return redirect()->route('portfolio-categories.index')->with('success', 'Kategori berhasil diperbarui!');
+        return redirect()->route('admin.portfolio-categories.index')->with('success', 'Kategori berhasil diperbarui!');
     }
 
     /**
@@ -70,6 +70,6 @@ class PortfolioCategoryController extends Controller
     {
         $portfolioCategory->delete();
 
-        return redirect()->route('portfolio-categories.index')->with('success', 'Kategori berhasil dihapus!');
+        return redirect()->route('admin.portfolio-categories.index')->with('success', 'Kategori berhasil dihapus!');
     }
 }

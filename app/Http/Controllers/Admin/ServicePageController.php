@@ -24,6 +24,6 @@ class ServicePageController extends Controller
             'subtitle' => 'required|string',
         ]);
         $serviceSection->update($validated);
-        return redirect()->route('services.index')->with('success', 'Judul section berhasil diperbarui!');
+        return redirect()->route('admin.services.index')->with('success', 'Judul section berhasil diperbarui!');
     }
 }

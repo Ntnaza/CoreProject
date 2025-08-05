@@ -9,7 +9,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('feature-items.store') }}" method="POST">
+        <form action="{{ route('admin.feature-items.store') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="icon">Kelas Ikon (Contoh: bi bi-clipboard-data)</label>
@@ -39,7 +39,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="{{ route('features.index') }}" class="btn btn-secondary">Batal</a>
+            <a href="{{ route('admin.features.index') }}" class="btn btn-secondary">Batal</a>
         </form>
     </div>
 </div>

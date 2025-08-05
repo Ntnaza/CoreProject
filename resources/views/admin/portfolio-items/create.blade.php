@@ -7,7 +7,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('portfolio-items.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.portfolio-items.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="title">Judul</label>
@@ -39,7 +39,7 @@
                 @error('detail_url')<div class="invalid-feedback">{{ $message }}</div>@enderror
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="{{ route('portfolio-items.index') }}" class="btn btn-secondary">Batal</a>
+            <a href="{{ route('admin.portfolio-items.index') }}" class="btn btn-secondary">Batal</a>
         </form>
     </div>
 </div>

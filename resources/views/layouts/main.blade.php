@@ -29,6 +29,7 @@
 
   {{-- Main Content --}}
   <main id="main">
+    @if (Route::currentRouteName() == 'home')
     @include('sections.hero.index')
     @include('sections.about.index')
     @include('sections.features.index')
@@ -38,8 +39,8 @@
     @include('sections.team.index')
     @include('sections.testimonial.index') 
     @include('sections.contact.index') 
-    
-    
+    @endif
+    @yield('content')
   </main>
   
   {{-- Footer --}}
@@ -47,6 +48,7 @@
   {{-- <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> --}}
   {{-- <div id="preloader"></div> --}}
 
+  
     <!-- Vendor JS Files -->
   <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{ asset('assets/vendor/php-email-form/validate.js')}}"></script>
@@ -55,7 +57,33 @@
   <script src="{{ asset('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
   <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
   <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+  <script src="https://kit.fontawesome.com/2a1264b814.js" crossorigin="anonymous"></script>
 
+  <script>
+$(document).ready(function() {
+    // Fungsi untuk menyamakan tinggi kartu portfolio
+    function setEqualHeight(columns) {
+        var tallestcolumn = 0;
+        columns.each(function() {
+            var currentHeight = $(this).height();
+            if (currentHeight > tallestcolumn) {
+                tallestcolumn = currentHeight;
+            }
+        });
+        columns.height(tallestcolumn);
+    }
+
+    // Panggil fungsi ini saat halaman dimuat
+    setEqualHeight($(".portfolio .portfolio-content"));
+
+    // Panggil lagi saat ukuran window berubah (untuk responsif)
+    $(window).on('resize', function() {
+        // Reset tinggi dulu sebelum menghitung ulang
+        $(".portfolio .portfolio-content").height('auto');
+        setEqualHeight($(".portfolio .portfolio-content"));
+    });
+});
+</script>
   <!-- Main JS File -->
   <script src="{{ asset('assets/js/main.js')}}"></script>
 </body>

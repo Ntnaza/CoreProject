@@ -7,7 +7,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('team-members.update', $teamMember) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.team-members.update', $teamMember) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="form-group">
@@ -52,7 +52,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Perbarui</button>
-            <a href="{{ route('team.index') }}" class="btn btn-secondary">Batal</a>
+            <a href="{{ route('admin.team.index') }}" class="btn btn-secondary">Batal</a>
         </form>
     </div>
 </div>

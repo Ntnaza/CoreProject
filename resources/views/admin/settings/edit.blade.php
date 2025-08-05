@@ -8,7 +8,7 @@
 <div class="card">
     <div class="card-body">
         @if(session('success')) <div class="alert alert-success">{{ session('success') }}</div> @endif
-        <form action="{{ route('settings.update') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.settings.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="form-group">

@@ -25,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // $heroItems = HeroItem::all();
         $heroItems = HeroItem::latest()->get();
         $about = About::firstOrFail();
         $featureSection = FeatureSection::firstOrFail();
@@ -37,8 +38,8 @@ class HomeController extends Controller
         $teamSection = TeamSection::firstOrFail();
         $teamMembers = TeamMember::all();
         $contactInfo = ContactInfo::firstOrFail();
-        $testimonials = Testimonial::where('is_approved', true)->latest()->get();
-         $testimonialSection = TestimonialSection::firstOrFail();
+        $testimonials = Testimonial::where('status', 'Disetujui')->latest()->get();
+        $testimonialSection = TestimonialSection::firstOrFail();
 
         // Kirim semua data ke view
         return view('layouts.main', compact(

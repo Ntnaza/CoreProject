@@ -9,7 +9,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('hero-items.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.hero-items.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="title">Judul</label>

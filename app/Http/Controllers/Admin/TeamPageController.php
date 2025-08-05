@@ -24,6 +24,6 @@ class TeamPageController extends Controller
             'subtitle' => 'required|string',
         ]);
         $teamSection->update($validated);
-        return redirect()->route('team.index')->with('success', 'Judul section tim berhasil diperbarui!');
+        return redirect()->route('admin.team.index')->with('success', 'Judul section tim berhasil diperbarui!');
     }
 }

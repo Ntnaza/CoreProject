@@ -33,7 +33,7 @@
                                 <input type="text" name="name" class="form-control" placeholder="Nama Anda" required>
                             </div>
                             <div class="col-md-6 form-group">
-                                <input type="text" name="position" class="form-control" placeholder="Posisi Anda (e.g., Pelanggan)" required>
+                                <input type="text" name="position" class="form-control" placeholder="Posisi atau jabatan anda Contoh: (Pelanggan)" required>
                             </div>
                             <div class="col-md-12 form-group">
                                 <select name="stars" class="form-control" required>
@@ -46,7 +46,8 @@
                                 </select>
                             </div>
                             <div class="col-md-12 form-group">
-                                <textarea class="form-control" name="quote" rows="5" placeholder="Tulis testimoni Anda..." required></textarea>
+                                <textarea name="quote" id="quote-input" class="form-control" placeholder="Tulis Pendapat Anda" maxlength="50"></textarea>
+<div id="char-counter" style="text-align: right; font-size: 12px; color: #6c757d; margin-top: 5px;"></div>
                             </div>
                             <div class="col-md-12 form-group">
                                 <label for="photo" class="form-label">Unggah Foto (Opsional)</label>

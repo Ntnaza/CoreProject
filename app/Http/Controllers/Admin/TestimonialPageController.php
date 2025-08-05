@@ -34,6 +34,6 @@ class TestimonialPageController extends Controller
         }
 
         $section->update($validated);
-        return redirect()->route('testimonials.index')->with('success', 'Section testimoni berhasil diperbarui!');
+        return redirect()->route('admin.testimonials.index')->with('success', 'Section testimoni berhasil diperbarui!');
     }
 }

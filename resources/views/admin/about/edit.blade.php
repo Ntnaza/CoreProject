@@ -1,16 +1,22 @@
 @extends('adminlte::page')
-@section('title', 'Edit Halaman About Us')
+@section('title', 'Edit Halaman Tentang Kami')
 @section('content_header')
-    <h1>Edit Halaman About Us</h1>
+    <h1>Edit Halaman Tentang Kami</h1>
 @stop
 
 @section('content')
 <div class="card">
     <div class="card-body">
         @if(session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
         @endif
-        <form action="{{ route('about.update') }}" method="POST" enctype="multipart/form-data">
+        
+        <form action="{{ route('admin.about.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -25,41 +31,15 @@
             </div>
             <hr>
 
-            {{-- Kolom Kiri --}}
-            <h4>Konten Kolom Kiri</h4>
+            {{-- Konten yang Masih Digunakan --}}
+            <h4>Konten Visi Misi & Video</h4>
             <div class="form-group">
-                <label>Headline</label>
-                <input type="text" name="headline" class="form-control" value="{{ old('headline', $about->headline) }}">
-            </div>
-             <div class="form-group">
-                <label>Gambar Utama</label>
-                <input type="file" name="main_image" class="form-control">
-                <small>Kosongkan jika tidak ingin ganti gambar.</small><br>
-                <img src="{{ Storage::url($about->main_image) }}" width="200" class="mt-2">
-            </div>
-            <div class="form-group">
-                <label>Paragraf 1</label>
-                <textarea name="paragraph1" class="form-control" rows="4">{{ old('paragraph1', $about->paragraph1) }}</textarea>
-            </div>
-             <div class="form-group">
-                <label>Paragraf 2</label>
-                <textarea name="paragraph2" class="form-control" rows="4">{{ old('paragraph2', $about->paragraph2) }}</textarea>
-            </div>
-            <hr>
-
-            {{-- Kolom Kanan --}}
-            <h4>Konten Kolom Kanan</h4>
-            <div class="form-group">
-                <label>Paragraf Italic</label>
+                <label>Paragraf Pembuka (Italic)</label>
                 <textarea name="italic_paragraph" class="form-control" rows="3">{{ old('italic_paragraph', $about->italic_paragraph) }}</textarea>
             </div>
             <div class="form-group">
-                <label>List Item (Satu item per baris)</label>
+                <label>List Item Visi & Misi (Satu item per baris)</label>
                 <textarea name="list_items" class="form-control" rows="4">{{ old('list_items', $about->list_items) }}</textarea>
-            </div>
-            <div class="form-group">
-                <label>Paragraf Final</label>
-                <textarea name="final_paragraph" class="form-control" rows="3">{{ old('final_paragraph', $about->final_paragraph) }}</textarea>
             </div>
             <div class="form-group">
                 <label>URL Video Youtube</label>
@@ -67,9 +47,11 @@
             </div>
             <div class="form-group">
                 <label>Gambar Video (Thumbnail)</label>
-                <input type="file" name="video_image" class="form-control">
-                <small>Kosongkan jika tidak ingin ganti gambar.</small><br>
-                <img src="{{ Storage::url($about->video_image) }}" width="200" class="mt-2">
+                <input type="file" name="video_image" class="form-control-file">
+                <small class="form-text text-muted">Kosongkan jika tidak ingin ganti gambar.</small><br>
+                @if($about->video_image)
+                    <img src="{{ asset('storage/' . $about->video_image) }}" width="200" class="mt-2 img-thumbnail">
+                @endif
             </div>
 
             <button type="submit" class="btn btn-primary">Simpan Perubahan</button>

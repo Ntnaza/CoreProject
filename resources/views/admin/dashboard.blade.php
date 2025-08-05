@@ -28,123 +28,61 @@
 
 @section('content')
     {{-- Baris untuk Info Box --}}
-    <div class="row">
-        <div class="col-lg-3 col-6">
-            {{-- small box --}}
-            <div class="small-box bg-info">
-                <div class="inner">
-                    <h3>150</h3>
-                    <p>Pesanan Baru</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-bag"></i>
-                </div>
-                <a href="#" class="small-box-footer">Info lebih lanjut <i class="fas fa-arrow-circle-right"></i></a>
+    {{-- Baris untuk Info Box --}}
+<div class="row">
+    {{-- Pesan Masuk --}}
+    <div class="col-lg-4 col-md-6">
+        <div class="small-box bg-info">
+            <div class="inner">
+                {{-- Tampilkan jumlah pesan dari controller --}}
+                <h3>{{ $messageCount }}</h3>
+                <p>Pesan Masuk</p>
             </div>
-        </div>
-        {{-- ./col --}}
-        <div class="col-lg-3 col-6">
-            {{-- small box --}}
-            <div class="small-box bg-success">
-                <div class="inner">
-                    <h3>53<sup style="font-size: 20px">%</sup></h3>
-                    <p>Tingkat Konversi</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-stats-bars"></i>
-                </div>
-                <a href="#" class="small-box-footer">Info lebih lanjut <i class="fas fa-arrow-circle-right"></i></a>
+            <div class="icon">
+                <i class="fas fa-envelope"></i>
             </div>
+            {{-- Arahkan link ke halaman manajemen kontak --}}
+            <a href="{{ route('admin.contact.index') }}" class="small-box-footer">Info lebih lanjut <i class="fas fa-arrow-circle-right"></i></a>
         </div>
-        {{-- ./col --}}
-        <div class="col-lg-3 col-6">
-            {{-- small box --}}
-            <div class="small-box bg-warning">
-                <div class="inner">
-                    <h3>44</h3>
-                    <p>Pengguna Terdaftar</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-person-add"></i>
-                </div>
-                <a href="#" class="small-box-footer">Info lebih lanjut <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        {{-- ./col --}}
-        <div class="col-lg-3 col-6">
-            {{-- small box --}}
-            <div class="small-box bg-danger">
-                <div class="inner">
-                    <h3>65</h3>
-                    <p>Pengunjung Unik</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-pie-graph"></i>
-                </div>
-                <a href="#" class="small-box-footer">Info lebih lanjut <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        {{-- ./col --}}
     </div>
+    
+    {{-- Testimoni --}}
+    <div class="col-lg-4 col-md-6">
+        <div class="small-box bg-success">
+            <div class="inner">
+                {{-- Tampilkan jumlah testimoni dari controller --}}
+                <h3>{{ $testimonialCount }}</h3>
+                <p>Total Testimoni</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-star"></i>
+            </div>
+            {{-- Arahkan link ke halaman manajemen testimoni --}}
+            <a href="{{ route('admin.testimonials.index') }}" class="small-box-footer">Info lebih lanjut <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+    
+    {{-- Anggota Tim --}}
+    <div class="col-lg-4 col-md-6">
+        <div class="small-box bg-warning">
+            <div class="inner">
+                {{-- Tampilkan jumlah anggota tim dari controller --}}
+                <h3>{{ $teamMemberCount }}</h3>
+                <p>Jumlah Anggota Team</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-users"></i>
+            </div>
+            {{-- Arahkan link ke halaman manajemen tim --}}
+            <a href="{{ route('admin.team-members.index') }}" class="small-box-footer">Info lebih lanjut <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+</div>
+{{-- /.row --}}
     {{-- /.row --}}
 
     {{-- Baris untuk Konten Utama (Grafik dan Tabel) --}}
-    <div class="row">
-        {{-- Kolom Kiri - Grafik --}}
-        <div class="col-lg-7">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Grafik Penjualan Bulanan</h3>
-                </div>
-                <div class="card-body">
-                    <canvas id="salesChart" style="height: 300px;"></canvas>
-                </div>
-            </div>
-        </div>
-
-        {{-- Kolom Kanan - Produk Terbaru --}}
-        <div class="col-lg-5">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Produk Terbaru Ditambahkan</h3>
-                </div>
-                <div class="card-body p-0">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th style="width: 10px">#</th>
-                                <th>Produk</th>
-                                <th style="width: 40px">Stok</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {{-- Data dummy, nantinya bisa di-loop dari controller --}}
-                            <tr>
-                                <td>1.</td>
-                                <td>Laptop Super Canggih</td>
-                                <td><span class="badge bg-success">12</span></td>
-                            </tr>
-                            <tr>
-                                <td>2.</td>
-                                <td>Mouse Gaming RGB</td>
-                                <td><span class="badge bg-warning">5</span></td>
-                            </tr>
-                            <tr>
-                                <td>3.</td>
-                                <td>Keyboard Mekanikal</td>
-                                <td><span class="badge bg-primary">20</span></td>
-                            </tr>
-                            <tr>
-                                <td>4.</td>
-                                <td>Monitor Ultrawide 4K</td>
-                                <td><span class="badge bg-danger">2</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 @stop
 
 @push('js')

@@ -31,12 +31,12 @@ class ContactPageController extends Controller
             'tiktok_url' => 'nullable|url',
         ]);
         $contactInfo->update($validated);
-        return redirect()->route('contact.index')->with('success', 'Info kontak berhasil diperbarui!');
+        return redirect()->route('admin.contact.index')->with('success', 'Info kontak berhasil diperbarui!');
     }
 
     public function destroyMessage(ContactMessage $contactMessage)
     {
         $contactMessage->delete();
-        return redirect()->route('contact.index')->with('success', 'Pesan berhasil dihapus!');
+        return redirect()->route('admin.contact.index')->with('success', 'Pesan berhasil dihapus!');
     }
 }

@@ -12,9 +12,9 @@ class TeamSectionSeeder extends Seeder
         DB::table('team_sections')->insert([
             'id' => 1,
             'title' => 'Team',
-            'subtitle' => 'Anggota hebat dan Profesional',
+            'subtitle' => 'Berikut adalah tim luar biasa di balik Core Project',
             'created_at' => '2025-07-22 22:23:21',
-            'updated_at' => '2025-07-24 10:23:49',
+            'updated_at' => '2025-08-01 09:23:40',
         ]);
     }
 }

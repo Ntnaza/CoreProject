@@ -8,9 +8,12 @@
             <div class="col-lg-5">
                 <div class="info-wrap">
                     <div class="info-item d-flex"><i class="bi bi-geo-alt flex-shrink-0"></i><div><h3>Address</h3><p>{{ $contactInfo->address }}</p></div></div>
-                    <div class="info-item d-flex"><i class="bi bi-telephone flex-shrink-0"></i><div><h3>Call Us</h3><p>{{ $contactInfo->phone }}</p></div></div>
-                    <div class="info-item d-flex"><i class="bi bi-envelope flex-shrink-0"></i><div><h3>Email Us</h3><p>{{ $contactInfo->email }}</p></div></div>
-                    <iframe src="{{ $contactInfo->map_url }}" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="info-item d-flex"><i class="bi bi-telephone flex-shrink-0"></i><div><h3>Telepon</h3><p>{{ $contactInfo->phone }}</p></div></div>
+                    <div class="info-item d-flex"><i class="bi bi-envelope flex-shrink-0"></i><div><h3>Email</h3><p>{{ $contactInfo->email }}</p></div></div>
+                    <div href="{{ $contactInfo->instagram_url }}" target="_blank" class="info-item d-flex"><i class="bi bi-instagram flex-shrink-0"></i><div><h3>Instagram</h3><p>coreproject.sch</p></div></div>
+                    <div class="info-item d-flex"><i class="bi bi-youtube flex-shrink-0"></i><div><h3>Youtube</h3><p>coreproject</p></div></div>
+                    <div class="info-item d-flex"><i class="bi bi-linkedin flex-shrink-0"></i><div><h3>Linkedin</h3><p>coreproject.sch</p></div></div>
+                    {{-- <iframe src="{{ $contactInfo->map_url }}" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
                 </div>
             </div>
             <div class="col-lg-7">

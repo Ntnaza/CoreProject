@@ -12,7 +12,7 @@
         </div>
         <div class="card-body">
             @if(session('success')) <div class="alert alert-success">{{ session('success') }}</div> @endif
-            <form action="{{ route('features.section.update') }}" method="POST">
+            <form action="{{ route('admin.features.section.update') }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
@@ -40,7 +40,7 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Bagian "Icon Boxes"</h3>
-            <a href="{{ route('feature-items.create') }}" class="btn btn-primary float-right">Tambah Icon Box Baru</a>
+            <a href="{{ route('admin.feature-items.create') }}" class="btn btn-primary float-right">Tambah Icon Box Baru</a>
         </div>
         <div class="card-body">
             <table class="table table-bordered">
@@ -59,8 +59,8 @@
                         <td>{{ $item->title }}</td>
                         <td>{{ $item->description }}</td>
                         <td>
-                            <a href="{{ route('feature-items.edit', $item) }}" class="btn btn-sm btn-warning">Edit</a>
-                            <form action="{{ route('feature-items.destroy', $item) }}" method="POST" style="display:inline-block;">
+                            <a href="{{ route('admin.feature-items.edit', $item) }}" class="btn btn-sm btn-warning">Edit</a>
+                            <form action="{{ route('admin.feature-items.destroy', $item) }}" method="POST" style="display:inline-block;">
                                 @csrf @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Anda yakin?')">Hapus</button>
                             </form>

@@ -7,7 +7,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('portfolio-categories.update', $portfolioCategory) }}" method="POST">
+        <form action="{{ route('admin.portfolio-categories.update', $portfolioCategory) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">
@@ -22,7 +22,7 @@
                 <small class="form-text text-muted">Gunakan format "filter-namakategori" tanpa spasi.</small>
             </div>
             <button type="submit" class="btn btn-primary">Perbarui</button>
-            <a href="{{ route('portfolio-categories.index') }}" class="btn btn-secondary">Batal</a>
+            <a href="{{ route('admin.portfolio-categories.index') }}" class="btn btn-secondary">Batal</a>
         </form>
     </div>
 </div>

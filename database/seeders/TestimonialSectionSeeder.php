@@ -12,10 +12,10 @@ class TestimonialSectionSeeder extends Seeder
         DB::table('testimonial_sections')->insert([
             'id' => 1,
             'title' => 'Testimoni',
-            'subtitle' => 'Apa yang mereka katakan tentang kami',
-            'background_image' => 'testimonials/bg/YbiyjiNMPut8H5k5djA8z2YiJBXv9HO16mFklLZG.jpg',
+            'subtitle' => 'Apa kata mereka tentang Core Project',
+            'background_image' => 'testimonials/bg/kkz3yjjyx98VnLKvYkHWx0ZWv2d43AcNoxYxNcJk.jpg',
             'created_at' => '2025-07-25 23:45:57',
-            'updated_at' => '2025-07-26 00:27:01',
+            'updated_at' => '2025-08-01 10:22:44',
         ]);
     }
 }

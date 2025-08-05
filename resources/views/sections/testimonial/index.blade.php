@@ -4,9 +4,12 @@
     @endif
 >
 
-    <div class="container section-title" data-aos="fade-up">
-        <h2>{{ $testimonialSection->title }}</h2>
-        <p>{{ $testimonialSection->subtitle }}</p>
+<div class="container section-title" data-aos="fade-up">
+    <br>
+    <br>
+    <br>
+    <h2 class="text-white">{{ $testimonialSection->title }}</h2>
+    <p class="text-white">{{ $testimonialSection->subtitle }}</p>
     </div>
     <div class="container" data-aos="fade-up" data-aos-delay="100">
 

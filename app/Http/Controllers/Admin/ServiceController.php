@@ -22,7 +22,7 @@ class ServiceController extends Controller
             'link' => 'required|string',
         ]);
         Service::create($validated);
-        return redirect()->route('services.index')->with('success', 'Item layanan baru berhasil ditambahkan!');
+        return redirect()->route('admin.services.index')->with('success', 'Item layanan baru berhasil ditambahkan!');
     }
 
     // --- PERUBAHAN DIMULAI DARI SINI ---
@@ -40,12 +40,12 @@ class ServiceController extends Controller
             'link' => 'required|string',
         ]);
         $service_item->update($validated); // Gunakan $service_item
-        return redirect()->route('services.index')->with('success', 'Item layanan berhasil diperbarui!');
+        return redirect()->route('admin.services.index')->with('success', 'Item layanan berhasil diperbarui!');
     }
 
     public function destroy(Service $service_item) // Ubah $service menjadi $service_item
     {
         $service_item->delete(); // Gunakan $service_item
-        return redirect()->route('services.index')->with('success', 'Item layanan berhasil dihapus!');
+        return redirect()->route('admin.services.index')->with('success', 'Item layanan berhasil dihapus!');
     }
 }

@@ -7,7 +7,7 @@
 <div class="card">
     <div class="card-body">
         {{-- Perbaikan ada di baris ini --}}
-        <form action="{{ route('service-items.update', $service_item) }}" method="POST">
+        <form action="{{ route('admin.service-items.update', $service_item) }}" method="POST">
     @csrf
     @method('PUT')
     <div class="form-group">
