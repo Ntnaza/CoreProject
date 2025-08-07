@@ -11,10 +11,11 @@
     @if($testimonialSection->background_image)
         style="background-image: url('{{ Storage::url($testimonialSection->background_image) }}'); background-size: cover; background-position: center; background-attachment: fixed;"
     @endif
->
+><br>
+<br>
     <div class="container section-title" data-aos="fade-up">
-        <h2>{{ $testimonialSection->title }}</h2>
-        <p>{{ $testimonialSection->subtitle }}</p>
+        <h2 class="text-white">{{ $testimonialSection->title }}</h2>
+        <p class="text-white">{{ $testimonialSection->subtitle }}</p>
     </div>{{-- ... sisa kode form Anda ... --}}
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -50,7 +51,7 @@
 <div id="char-counter" style="text-align: right; font-size: 12px; color: #6c757d; margin-top: 5px;"></div>
                             </div>
                             <div class="col-md-12 form-group">
-                                <label for="photo" class="form-label">Unggah Foto (Opsional)</label>
+                                <label for="photo" class="form-label text-white">Unggah Foto (Opsional)</label>
                                 <input type="file" class="form-control" name="photo">
                             </div>
                             <div class="col-md-12 text-center">

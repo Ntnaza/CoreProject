@@ -7,8 +7,6 @@
                 <div class="container">
                     <h2>{{ $item->title }}</h2>
                     <p>{{ $item->description }}</p>
-                    <br>
-                    <br>
                     <br><br>
                     {{-- <a href="#services" class="btn-get-started">Get Started</a> --}}
                 </div>

@@ -8,8 +8,8 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Favicons -->
-  <link href="{{ asset('assets/img/core.png')}}" rel="icon">
-  <link href="{{ asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  <link href="{{ asset('assets/img/favicon.png')}}" rel="icon">
+  <link href="{{ asset('assets/img/favicon.png')}}" rel="apple-touch-icon">
 
 
   <!-- Vendor CSS Files -->
@@ -29,17 +29,6 @@
 
   {{-- Main Content --}}
   <main id="main">
-    @if (Route::currentRouteName() == 'home')
-    @include('sections.hero.index')
-    @include('sections.about.index')
-    @include('sections.features.index')
-    @include('sections.services.index')
-    @include('sections.call.index')
-    @include('sections.portfolio.index')
-    @include('sections.team.index')
-    @include('sections.testimonial.index') 
-    @include('sections.contact.index') 
-    @endif
     @yield('content')
   </main>
   

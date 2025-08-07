@@ -25,11 +25,14 @@
                 <h4>Useful Links</h4>
                 <ul>
                     {{-- Link ini juga diubah agar berfungsi dari halaman manapun --}}
-                    <li><a href="{{ url('/') }}#hero">Home</a></li>
-                    <li><a href="{{ url('/') }}#about">About us</a></li>
-                    <li><a href="{{ url('/') }}#services">Services</a></li>
-                    <li><a href="{{ url('/') }}#portfolio">Portfolio</a></li>
-                    <li><a href="{{ url('/') }}#team">Team</a></li>
+                    <li><a href="{{ url('/') }}#hero" class="active">Beranda</a></li>
+                <li><a href="{{ url('/') }}#about">Tentang Kami</a></li>
+                <li><a href="{{ url('/') }}#services">Layanan</a></li>
+                <li><a href="{{ url('/') }}#portfolio">Produk Kami</a></li>
+                <li><a href="{{ url('/') }}#team">Team</a></li>
+                <li><a href="{{ url('/') }}#testimonials">Testimoni</a></li>
+                <li><a href="{{ url('/') }}#galery">Galeri</a></li>
+                <li><a href="{{ url('/') }}#contact">Kontak</a></li>
                 </ul>
             </div>
 

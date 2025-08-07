@@ -18,8 +18,9 @@
                 <li><a href="{{ url('/') }}#portfolio">Produk Kami</a></li>
                 <li><a href="{{ url('/') }}#team">Team</a></li>
                 <li><a href="{{ url('/') }}#testimonials">Testimoni</a></li>
+                <li><a href="{{ url('/') }}#galery">Galeri</a></li>
                 <li><a href="{{ url('/') }}#contact">Kontak</a></li>
-                <li><a href="{{ route('testimonials.public.create') }}#testimonials-form">Tulis Testimoni</a></li>
+                {{-- <li><a href="{{ route('testimonials.public.create') }}#testimonials-form">Tulis Testimoni</a></li> --}}
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

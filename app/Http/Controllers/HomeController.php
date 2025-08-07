@@ -18,6 +18,10 @@ use App\Models\TeamMember;
 use App\Models\ContactInfo;
 use App\Models\Testimonial;
 use App\Models\TestimonialSection;
+use App\Models\GalleryCategory;
+use App\Models\GalleryItem;
+
+
 class HomeController extends Controller
 {
     /**
@@ -40,13 +44,15 @@ class HomeController extends Controller
         $contactInfo = ContactInfo::firstOrFail();
         $testimonials = Testimonial::where('status', 'Disetujui')->latest()->get();
         $testimonialSection = TestimonialSection::firstOrFail();
+        $galleryCategories = GalleryCategory::all();
+        $galleryItems = GalleryItem::with('category')->latest()->get();
 
         // Kirim semua data ke view
-        return view('layouts.main', compact(
+        return view('home', compact(
             'heroItems', 'about', 'featureSection', 'featureItems', 'serviceSection',
             'services', // Cukup panggil sekali
             'cta', 'portfolioCategories', 'portfolioItems', 'teamSection',
-            'teamMembers','contactInfo', 'testimonialSection', 'testimonials'
+            'teamMembers','contactInfo', 'testimonialSection', 'testimonials','galleryCategories','galleryItems'
         ));
     }
 }

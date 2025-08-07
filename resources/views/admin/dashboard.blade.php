@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dasbor Admin')
+@section('title', 'Dashboard Admin')
 
 @section('content_header')
     <h1 class="m-0 text-dark">Dasboard</h1>

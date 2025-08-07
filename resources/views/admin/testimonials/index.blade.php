@@ -74,7 +74,7 @@
                         {{-- PENINGKATAN: Memberi ID pada setiap baris untuk manipulasi JS --}}
                         <tr id="row-{{ $testimonial->id }}">
                             <td>
-                                <img src="{{ $testimonial->photo ? asset('storage/' . $testimonial->photo) : 'https://via.placeholder.com/80' }}" style="width: 80px; height: 80px; object-fit: cover;" class="rounded-circle">
+                                <img src="{{ $testimonial->photo ? asset('storage/' . $testimonial->photo) : asset('assets/img/u.jpg') }}" style="width: 80px; height: 80px; object-fit: cover;" class="rounded-circle">
                             </td>
                             <td>{{ $testimonial->name }}</td>
                             <td>{{ $testimonial->position }}</td>

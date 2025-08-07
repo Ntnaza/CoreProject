@@ -26,7 +26,8 @@ use App\Http\Controllers\Admin\TeamPageController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\TestimonialPageController;
 use App\Http\Controllers\ContactMessageController;
-
+use App\Http\Controllers\Admin\GalleryCategoryController;
+use App\Http\Controllers\Admin\GalleryItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,6 +96,8 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::get('testimonial-page-settings', [TestimonialPageController::class, 'index'])->name('testimonials.page.settings');
     Route::post('testimonial-page-settings', [TestimonialPageController::class, 'updateSection'])->name('testimonials.section.update');
 
+    Route::resource('gallery-categories', GalleryCategoryController::class)->except('show');
+    Route::resource('gallery-items', GalleryItemController::class)->except('show');
 });
 
 

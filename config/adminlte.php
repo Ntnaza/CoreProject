@@ -18,20 +18,34 @@ return [
     'title_prefix' => '',
     'title_postfix' => '',
 
-    /*
+ /*
     |--------------------------------------------------------------------------
     | Favicon
     |--------------------------------------------------------------------------
-    |
-    | Here you can activate the favicon.
-    |
-    | For detailed instructions you can look the favicon section here:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
-    |
     */
 
+    // Set ke true untuk menggunakan file .ico dari folder public.
+    // Atur ke false jika Anda menggunakan file .png atau lainnya.
     'use_ico_only' => false,
-    'use_full_favicon' => false,
+
+    // Set ke true untuk menggunakan file .png dari folder public.
+    'use_full_favicon' => true,
+
+    // PERUBAHAN: Tambahkan array 'favicons' di bawah ini
+    // untuk menentukan lokasi file logo Anda.
+    'favicons' => [
+    [
+        'rel' => 'icon',
+        'href' => 'assets/img/favicon.png', // <-- UBAH PATH INI
+        'type' => 'image/png',
+        'sizes' => '32x32',
+    ],
+    [
+        'rel' => 'apple-touch-icon',
+        'href' => 'assets/img/favicon.png', // <-- UBAH PATH INI JUGA
+        'type' => 'image/png',
+    ],
+],
 
     /*
     |--------------------------------------------------------------------------
@@ -307,11 +321,11 @@ return [
 
     'menu' => [
     // Navbar items:
-    [
-        'type'         => 'navbar-search',
-        'text'         => 'search',
-        'topnav_right' => true,
-    ],
+    // [
+    //     'type'         => 'navbar-search',
+    //     'text'         => 'search',
+    //     'topnav_right' => true,
+    // ],
     [
         'type'         => 'fullscreen-widget',
         'topnav_right' => true,
@@ -374,6 +388,20 @@ return [
     'text' => 'Team',
     'route'  => 'admin.team.index',
     'icon' => 'fas fa-fw fa-users',
+],
+[
+    'text' => 'Galeri',
+    'icon' => 'fas fa-fw fa-images',
+    'submenu' => [
+        [
+            'text' => 'Kategori Galeri',
+            'route'  => 'admin.gallery-categories.index',
+        ],
+        [
+            'text' => 'Item Galeri',
+            'route'  => 'admin.gallery-items.index',
+        ],
+    ],
 ],
 [
     'text' => 'Kontak',

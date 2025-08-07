@@ -78,10 +78,10 @@
                     <label>YouTube</label>
                     <input type="text" name="youtube_url" class="form-control" value="{{ old('youtube_url', $contactInfo->youtube_url) }}">
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label>TikTok</label>
                     <input type="text" name="tiktok_url" class="form-control" value="{{ old('tiktok_url', $contactInfo->tiktok_url) }}">
-                </div>
+                </div> --}}
 
                 <button type="submit" class="btn btn-primary mt-3">Simpan Perubahan Info</button>
             </form>
