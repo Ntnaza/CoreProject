@@ -48,24 +48,24 @@
 {{-- TAMBAHKAN BLOK STYLE INI DI BAWAH SECTION ANDA         --}}
 {{-- ======================================================= --}}
 <style>
-    /* Membuat "bingkai" untuk gambar dengan rasio aspek tetap */
-    .portfolio-image-wrap {
+    /* PERBAIKAN: Selector dibuat lebih spesifik */
+    .portfolio.section .portfolio-item .portfolio-image-wrap {
         display: block;
         overflow: hidden;
-        aspect-ratio: 4 / 3; /* Rasio 4:3 (lebar:tinggi). Ubah sesuai selera, misal: 16/9 atau 1/1 */
-        background-color: #f0f0f0; /* Warna placeholder */
+        aspect-ratio: 4 / 3; /* Rasio potret standar */
+        background-color: #f0f0f0;
     }
 
-    /* Memaksa gambar untuk mengisi bingkai tanpa menjadi gepeng */
-    .portfolio-image-wrap img {
+    /* PERBAIKAN: Selector dibuat lebih spesifik */
+    .portfolio.section .portfolio-item .portfolio-image-wrap img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Ini bagian terpenting */
+        object-fit: cover;
         transition: transform 0.3s ease;
     }
 
     /* Efek zoom saat kursor di atas gambar */
-    .portfolio-content:hover .portfolio-image-wrap img {
+    .portfolio.section .portfolio-item .portfolio-content:hover .portfolio-image-wrap img {
         transform: scale(1.1);
     }
 </style>

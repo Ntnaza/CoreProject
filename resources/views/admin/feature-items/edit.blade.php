@@ -9,7 +9,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('feature-items.update', $featureItem) }}" method="POST">
+        <form action="{{ route('admin.feature-items.update', $featureItem) }}" method="POST">
             @csrf
             @method('PUT')
 
@@ -26,7 +26,7 @@
 
             <div class="form-group">
                 <label for="title">Judul</label>
-                <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" value="{{ old('title', $featureItem->title) }}">
+               <input type="text" name="title" class="form-control" value="{{ old('title', $featureItem->title) }}">
                 @error('title')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -41,7 +41,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Perbarui</button>
-            <a href="{{ route('features.index') }}" class="btn btn-secondary">Batal</a>
+            <a href="{{ route('admin.features.index') }}" class="btn btn-secondary">Batal</a>
         </form>
     </div>
 </div>

@@ -36,9 +36,10 @@ class FeatureItemController extends Controller
      * Menampilkan form untuk mengedit item fitur.
      */
     public function edit(FeatureItem $featureItem)
-    {
-        return view('admin.feature-items.edit', compact('featureItem'));
-    }
+{
+    // Menggunakan compact() akan mengirim variabel dengan nama '$featureItem'
+    return view('admin.feature-items.edit', compact('featureItem'));
+}
 
     /**
      * Memperbarui item fitur di database.
