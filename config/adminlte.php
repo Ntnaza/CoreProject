@@ -372,17 +372,8 @@ return [
 ],
 [
     'text' => 'Produk Kami',
+    'route'  => 'admin.portfolio-items.index', // Langsung ke halaman item
     'icon' => 'fas fa-fw fa-th',
-    'submenu' => [
-        [
-            'text' => 'Kategori Produk',
-            'route'  => 'admin.portfolio-categories.index',
-        ],
-        [
-            'text' => 'Item Produk',
-            'route'  => 'admin.portfolio-items.index',
-        ],
-    ],
 ],
 [
     'text' => 'Team',
@@ -391,18 +382,10 @@ return [
 ],
 [
     'text' => 'Galeri',
+    'route'  => 'admin.gallery-items.index', // Langsung ke halaman item
     'icon' => 'fas fa-fw fa-images',
-    'submenu' => [
-        [
-            'text' => 'Kategori Galeri',
-            'route'  => 'admin.gallery-categories.index',
-        ],
-        [
-            'text' => 'Item Galeri',
-            'route'  => 'admin.gallery-items.index',
-        ],
-    ],
 ],
+
 [
     'text' => 'Kontak',
     'route'  => 'admin.contact.index',

@@ -30,7 +30,7 @@
             {{-- Info di bawah gambar --}}
             <div class="portfolio-info">
               <h4><a href="{{ asset('storage/' . $item->image) }}" class="glightbox" title="{{ $item->title }}">{{ $item->title }}</a></h4>
-              <p>{{ $item->description }}</p>
+              {{-- <p>{{ $item->description }}</p> --}}
             </div>
           </div>
         </div><!-- End Portfolio Item -->

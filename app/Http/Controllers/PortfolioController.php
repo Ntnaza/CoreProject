@@ -11,9 +11,12 @@ class PortfolioController extends Controller
     // Method untuk menampilkan halaman daftar portfolio
     public function index()
     {
-        $portfolioItems = PortfolioItem::latest()->get();
         $portfolioCategories = PortfolioCategory::all();
-        // Asumsi data section diambil dari tempat lain atau tidak diperlukan di sini
+        
+        // PERBAIKAN: Tambahkan whereNotNull('slug') untuk memfilter data
+        $portfolioItems = PortfolioItem::with('category')->whereNotNull('slug')->latest()->get();
+
+        // Pastikan Anda punya view bernama 'portfolio.blade.php' atau sesuaikan
         return view('portfolio', compact('portfolioItems', 'portfolioCategories'));
     }
 

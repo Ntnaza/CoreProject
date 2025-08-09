@@ -5,7 +5,7 @@
     <div class="logo-container">
         <a href="/">
             {{-- PERBAIKAN 3: Ganti h2 dengan tag img untuk logo --}}
-            <img src="{{ asset('assets/img/core.png') }}" alt="Core Project Logo" class="logo">
+            <img src="{{ asset('assets/img/favicon.png') }}" alt="Core Project Logo" class="logo">
         </a>
         <h2 class="text-white">Selamat Datang Admin</h2>
     </div>

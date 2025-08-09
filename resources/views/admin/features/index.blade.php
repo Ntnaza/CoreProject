@@ -5,13 +5,22 @@
 @stop
 
 @section('content')
+    {{-- Notifikasi Sukses --}}
+    @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
     {{-- Form untuk Why Box --}}
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Bagian "Why Box"</h3>
+            <h3 class="card-title">Pengaturan Section Features</h3>
         </div>
         <div class="card-body">
-            @if(session('success')) <div class="alert alert-success">{{ session('success') }}</div> @endif
             <form action="{{ route('admin.features.section.update') }}" method="POST">
                 @csrf
                 @method('PUT')
@@ -31,7 +40,7 @@
                     <label>URL Tombol</label>
                     <input type="text" name="link_url" class="form-control" value="{{ $featureSection->link_url }}">
                 </div>
-                <button type="submit" class="btn btn-primary">Simpan Perubahan "Why Box"</button>
+                <button type="submit" class="btn btn-primary">Simpan Pengaturan</button>
             </form>
         </div>
     </div>
@@ -39,36 +48,46 @@
     {{-- Tabel untuk Icon Boxes --}}
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Bagian "Icon Boxes"</h3>
-            <a href="{{ route('admin.feature-items.create') }}" class="btn btn-primary float-right">Tambah Icon Box Baru</a>
+            <h3 class="card-title">Daftar Item Features</h3>
+            {{-- PERBAIKAN 1: Tombol dipindahkan ke card-tools agar di kanan --}}
+            <div class="card-tools">
+                <a href="{{ route('admin.feature-items.create') }}" class="btn btn-primary btn-sm">Tambah Item Baru</a>
+            </div>
         </div>
-        <div class="card-body">
-            <table class="table table-bordered">
+        {{-- PERBAIKAN 2: Menambahkan kelas p-0 untuk menghapus padding --}}
+        <div class="card-body p-0">
+            {{-- PERBAIKAN 3: Mengganti table-bordered dengan table-striped --}}
+            <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Ikon</th>
+                        <th style="width: 80px;">Ikon</th>
                         <th>Judul</th>
                         <th>Deskripsi</th>
-                        <th>Aksi</th>
+                        <th style="width: 150px;">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($featureItems as $item)
+                    @forelse($featureItems as $item)
                     <tr>
-                        <td><i class="{{ $item->icon }}" style="font-size: 2rem;"></i></td>
+                        <td class="text-center"><i class="{{ $item->icon }}" style="font-size: 2rem;"></i></td>
                         <td>{{ $item->title }}</td>
                         <td>{{ $item->description }}</td>
                         <td>
-                            <a href="{{ route('admin.feature-items.edit', $item) }}" class="btn btn-sm btn-warning">Edit</a>
+                            {{-- PERBAIKAN 4: Ukuran tombol diubah menjadi lebih kecil --}}
+                            <a href="{{ route('admin.feature-items.edit', $item) }}" class="btn btn-xs btn-warning">Edit</a>
                             <form action="{{ route('admin.feature-items.destroy', $item) }}" method="POST" style="display:inline-block;">
                                 @csrf @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Anda yakin?')">Hapus</button>
+                                <button type="submit" class="btn btn-xs btn-danger" onclick="return confirm('Anda yakin?')">Hapus</button>
                             </form>
                         </td>
                     </tr>
-                    @endforeach
+                    @empty
+                    <tr>
+                        <td colspan="4" class="text-center">Belum ada item features.</td>
+                    </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>
     </div>
-@stop
+@stop   

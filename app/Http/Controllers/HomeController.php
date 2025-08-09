@@ -38,7 +38,7 @@ class HomeController extends Controller
         $services = Service::all(); // Cukup panggil sekali
         $cta = Cta::firstOrFail();
         $portfolioCategories = PortfolioCategory::all();
-        $portfolioItems = PortfolioItem::with('category')->get();
+        $portfolioItems = PortfolioItem::with('category')->whereNotNull('slug')->latest()->get();
         $teamSection = TeamSection::firstOrFail();
         $teamMembers = TeamMember::all();
         $contactInfo = ContactInfo::firstOrFail();
@@ -46,7 +46,7 @@ class HomeController extends Controller
         $testimonialSection = TestimonialSection::firstOrFail();
         $galleryCategories = GalleryCategory::all();
         $galleryItems = GalleryItem::with('category')->latest()->get();
-
+// dd($portfolioItems);
         // Kirim semua data ke view
         return view('home', compact(
             'heroItems', 'about', 'featureSection', 'featureItems', 'serviceSection',

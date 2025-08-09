@@ -4,17 +4,25 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\GalleryItem;
-use App\Models\GalleryCategory;
+use App\Models\GalleryCategory; // Pastikan ini di-import
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class GalleryItemController extends Controller
 {
+    /**
+     * PERBAIKAN: Method ini sekarang mengambil data item DAN kategori
+     */
     public function index()
     {
-        $items = GalleryItem::with('category')->latest()->get();
-        return view('admin.gallery_items.index', compact('items'));
+        $galleryItems = GalleryItem::with('category')->latest()->get();
+        $galleryCategories = GalleryCategory::all(); // Mengambil data kategori
+
+        return view('admin.gallery_items.index', compact('galleryItems', 'galleryCategories'));
     }
+
+    // Method create(), store(), edit(), update(), destroy() tidak perlu diubah
+    // ... (kode Anda yang lain tetap sama) ...
 
     public function create()
     {
@@ -30,10 +38,8 @@ class GalleryItemController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'gallery_category_id' => 'required|exists:gallery_categories,id',
         ]);
-
         $validated['image'] = $request->file('image')->store('gallery', 'public');
         GalleryItem::create($validated);
-
         return redirect()->route('admin.gallery-items.index')->with('success', 'Item galeri berhasil ditambahkan.');
     }
 
@@ -51,14 +57,11 @@ class GalleryItemController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'gallery_category_id' => 'required|exists:gallery_categories,id',
         ]);
-
         if ($request->hasFile('image')) {
             Storage::disk('public')->delete($galleryItem->image);
             $validated['image'] = $request->file('image')->store('gallery', 'public');
         }
-
         $galleryItem->update($validated);
-
         return redirect()->route('admin.gallery-items.index')->with('success', 'Item galeri berhasil diperbarui.');
     }
 
